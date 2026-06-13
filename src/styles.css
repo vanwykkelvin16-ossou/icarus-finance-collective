@@ -73,10 +73,10 @@
 
 :root {
   --radius: 0.625rem;
-  --brand-blue: oklch(0.34 0.13 264);
-  --brand-orange: oklch(0.68 0.21 38);
-  --brand-black: oklch(0.13 0 0);
-  --brand-white: oklch(0.99 0 0);
+  --brand-blue: oklch(0.3164 0.1254 260.65);
+  --brand-orange: oklch(0.6706 0.217 38.33);
+  --brand-black: oklch(0 0 0);
+  --brand-white: oklch(0.997 0 90);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
