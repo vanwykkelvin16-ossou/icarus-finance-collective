@@ -61,8 +61,22 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme inline {
+  --font-display: "Cinzel", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --color-brand: var(--brand-blue);
+  --color-brand-foreground: var(--brand-white);
+  --color-accent-orange: var(--brand-orange);
+  --color-ink: var(--brand-black);
+  --color-paper: var(--brand-white);
+}
+
 :root {
   --radius: 0.625rem;
+  --brand-blue: oklch(0.34 0.13 264);
+  --brand-orange: oklch(0.68 0.21 38);
+  --brand-black: oklch(0.13 0 0);
+  --brand-white: oklch(0.99 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -140,5 +154,26 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
