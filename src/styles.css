@@ -151,6 +151,18 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :target {
+    scroll-margin-top: 5rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
