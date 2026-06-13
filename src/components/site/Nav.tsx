@@ -29,7 +29,7 @@ export function Nav() {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a
           href="#top"
-          className="font-display text-xl font-700 tracking-[0.35em] text-ink"
+          className="font-display text-xl font-bold tracking-[0.35em] text-ink"
         >
           ICARUS
         </a>
@@ -39,7 +39,7 @@ export function Nav() {
             <a
               key={l.label}
               href={l.href}
-              className="text-[13px] font-500 tracking-wide text-ink/70 transition-colors hover:text-ink"
+              className="text-[13px] font-medium tracking-wide text-ink/70 transition-colors hover:text-ink"
             >
               {l.label}
             </a>
@@ -48,7 +48,7 @@ export function Nav() {
 
         <a
           href="#contact"
-          className="hidden rounded-full bg-accent-orange px-5 py-2 text-[13px] font-600 text-paper shadow-sm transition-all hover:brightness-110 hover:shadow-md md:inline-flex"
+          className="hidden rounded-full bg-accent-orange px-5 py-2 text-[13px] font-semibold text-paper shadow-sm transition-all hover:brightness-110 hover:shadow-md md:inline-flex"
         >
           Start a conversation
         </a>
@@ -80,7 +80,7 @@ export function Nav() {
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-sm font-500 text-ink/80"
+                className="py-2 text-sm font-medium text-ink/80"
               >
                 {l.label}
               </a>
@@ -88,7 +88,7 @@ export function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-accent-orange px-5 py-2.5 text-center text-sm font-600 text-paper"
+              className="mt-2 rounded-full bg-accent-orange px-5 py-2.5 text-center text-sm font-semibold text-paper"
             >
               Start a conversation
             </a>
