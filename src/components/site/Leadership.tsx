@@ -2,7 +2,12 @@ import { Reveal } from "./Reveal";
 
 export function Leadership() {
   return (
-    <section id="leadership" className="bg-brand py-28 text-brand-foreground lg:py-40">
+    <section id="leadership" className="relative overflow-hidden bg-gradient-brand py-28 text-brand-foreground lg:py-44">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-40 top-0 h-[40rem] w-[40rem] rounded-full opacity-[0.12]"
+        style={{ background: "radial-gradient(circle, var(--brand-orange) 0%, transparent 60%)" }}
+      />
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
           <p className="text-[12px] font-semibold uppercase tracking-[0.4em] text-accent-orange">
@@ -32,7 +37,7 @@ export function Leadership() {
           </Reveal>
 
           <Reveal delay={240}>
-            <div className="rounded-3xl border border-brand-foreground/15 bg-brand-foreground/5 p-8 backdrop-blur-sm lg:p-10">
+            <div className="rounded-3xl border border-brand-foreground/15 bg-brand-foreground/5 p-8 shadow-elevated backdrop-blur-md transition-transform duration-500 hover:-translate-y-1 lg:p-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-accent-orange">
                 Chief Executive Officer
               </p>
