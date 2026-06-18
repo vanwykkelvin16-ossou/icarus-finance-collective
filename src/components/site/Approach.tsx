@@ -25,7 +25,7 @@ const principles = [
 
 export function Approach() {
   return (
-    <section id="approach" className="bg-paper py-28 lg:py-40">
+    <section id="approach" className="bg-surface py-28 lg:py-44">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
           <p className="text-[12px] font-semibold uppercase tracking-[0.4em] text-accent-orange">
@@ -48,7 +48,7 @@ export function Approach() {
         <div className="mt-16 grid gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {principles.map((p, i) => (
             <Reveal key={p.no} delay={i * 100}>
-              <div className="group">
+              <div className="group h-full rounded-3xl border border-ink/8 bg-paper p-7 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-accent-orange/30 hover:shadow-card">
                 <span className="font-display text-5xl font-bold text-ink/10 transition-colors group-hover:text-accent-orange">
                   {p.no}
                 </span>
