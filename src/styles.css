@@ -69,6 +69,7 @@
   --color-accent-orange: var(--brand-orange);
   --color-ink: var(--brand-black);
   --color-paper: var(--brand-white);
+  --color-surface: var(--surface-tint);
 }
 
 :root {
@@ -77,6 +78,16 @@
   --brand-orange: oklch(0.6706 0.217 38.33);
   --brand-black: oklch(0 0 0);
   --brand-white: oklch(0.997 0 90);
+  --shadow-soft: 0 1px 2px color-mix(in oklab, var(--brand-black) 6%, transparent),
+    0 8px 24px -12px color-mix(in oklab, var(--brand-blue) 18%, transparent);
+  --shadow-card: 0 2px 6px color-mix(in oklab, var(--brand-black) 6%, transparent),
+    0 24px 48px -24px color-mix(in oklab, var(--brand-blue) 28%, transparent);
+  --shadow-elevated: 0 4px 10px color-mix(in oklab, var(--brand-black) 8%, transparent),
+    0 40px 80px -32px color-mix(in oklab, var(--brand-blue) 38%, transparent);
+  --shadow-cta: 0 10px 30px -10px color-mix(in oklab, var(--brand-orange) 55%, transparent);
+  --surface-tint: color-mix(in oklab, var(--brand-blue) 4%, var(--brand-white));
+  --gradient-brand: linear-gradient(135deg, var(--brand-blue) 0%, color-mix(in oklab, var(--brand-blue) 70%, var(--brand-black)) 100%);
+  --gradient-cta: linear-gradient(135deg, var(--brand-orange) 0%, color-mix(in oklab, var(--brand-orange) 80%, var(--brand-black)) 100%);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
