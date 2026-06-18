@@ -20,10 +20,10 @@ export function Contact() {
   };
 
   const field =
-    "w-full border-0 border-b border-ink/15 bg-transparent py-3 text-ink outline-none transition-colors placeholder:text-ink/30 focus:border-accent-orange";
+    "mt-2 w-full rounded-xl border border-ink/12 bg-paper px-4 py-3 text-ink outline-none transition-all placeholder:text-ink/30 focus:border-accent-orange focus:ring-3 focus:ring-accent-orange/15";
 
   return (
-    <section id="contact" className="bg-paper py-28 lg:py-40">
+    <section id="contact" className="bg-surface py-28 lg:py-44">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
           <p className="text-[12px] font-semibold uppercase tracking-[0.4em] text-accent-orange">
@@ -64,7 +64,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={240}>
-            <form onSubmit={onSubmit} className="space-y-7">
+            <form onSubmit={onSubmit} className="space-y-6 rounded-3xl border border-ink/8 bg-paper p-8 shadow-card lg:p-10">
               <div>
                 <label className="text-[11px] font-semibold uppercase tracking-[0.25em] text-ink/40">
                   Name
@@ -116,7 +116,7 @@ export function Contact() {
               </div>
               <button
                 type="submit"
-                className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-brand-foreground shadow-lg transition-all hover:brightness-110"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-cta px-7 py-3.5 text-sm font-semibold text-paper shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
               >
                 Send enquiry
                 <span className="transition-transform group-hover:translate-x-1">→</span>

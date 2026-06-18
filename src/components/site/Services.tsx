@@ -47,7 +47,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="bg-ink py-28 text-paper lg:py-40">
+    <section id="services" className="bg-ink py-28 text-paper lg:py-44">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
           <p className="text-[12px] font-semibold uppercase tracking-[0.4em] text-accent-orange">
@@ -66,12 +66,12 @@ export function Services() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-paper/10 bg-paper/10 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {services.map((s, i) => (
             <Reveal
               key={s.no}
               delay={i * 120}
-              className="group flex h-full flex-col bg-ink p-8 transition-colors duration-500 hover:bg-paper/[0.04] lg:p-10"
+              className="group flex h-full flex-col rounded-3xl border border-paper/10 bg-paper/[0.03] p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-accent-orange/40 hover:bg-paper/[0.06] lg:p-10"
             >
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-sm font-semibold text-accent-orange">

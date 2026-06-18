@@ -1,48 +1,52 @@
-# Icarus Advisory — Landing Page
+# Icarus Advisory — Premium Redesign
 
-A world-class, Apple-inspired single-page site. Pure typographic minimalism: generous whitespace, bold restrained type, brand color accents, smooth scroll reveals. No stock photography. Enquiry form opens the visitor's email client (mailto).
+Elevate the existing one-page site to a world-class corporate-finance / advisory look that matches the sophistication of the reference, **without changing any content**. All text, sections, navigation items, brand colors (`#042C70`, `#FD5303`, `#000000`, `#FEFEFE`) and fonts (Cinzel display, Montserrat body) stay exactly as they are. This is purely a visual / layout / motion upgrade.
 
-## Design Foundations
+## Design language
 
-**Fonts** (loaded via `<link>` in root route head):
-- Cinzel — display/headings (the "ICARUS" wordmark, section titles)
-- Montserrat — subheadings, body, UI
+- Tighten and standardise a spacing rhythm: larger, more consistent vertical padding (sections breathe more), wider content gutters, clearer max-widths.
+- Stronger type hierarchy: bigger hero headline, refined eyebrow labels, more deliberate paragraph spacing and measure (line length).
+- Premium component styling system-wide: rounded corners, soft layered shadows, subtle borders, light glass/blur accents, refined hover micro-interactions.
+- Subtle motion: keep the existing `Reveal` scroll fade-up, extend it with gentle staggering, hover lifts on cards/buttons, and a smooth hero load animation. All restrained and professional.
 
-**Palette** (brand-locked, mapped to semantic tokens in `src/styles.css`):
-- `#042C70` deep blue — primary
-- `#FD5303` orange — accent / CTAs
-- `#000000` black — text on light
-- `#FEFEFE` near-white — background
+## Foundations (`src/styles.css`)
 
-Light-first design, mostly white canvas with deep-blue and one black section for contrast, orange used sparingly for emphasis and CTAs only (Apple-style accent discipline).
+- Add reusable design tokens: soft shadow scale (e.g. `--shadow-soft`, `--shadow-card`, `--shadow-elevated`), a subtle brand gradient token, and a faint surface tint token for alternating section backgrounds — all built from existing brand colors via `color-mix`.
+- Add a couple of utility keyframes (e.g. a slow float/scale for hero ambient shapes). Keep marquee/reveal as-is.
+- No new fonts, no new palette — only derived tokens.
 
-## Page Structure (one route: `/`)
+## Section-by-section
 
-Fixed slim top nav: ICARUS wordmark left; Corporate Finance · Treasury · Value Creation · Contact right; "Start a conversation" pill (orange) on the far right. Subtle blur/translucent background on scroll.
+**Nav** — refine the sticky/blur header: smoother scrolled state with soft shadow, slightly larger touch targets, polished CTA button (gradient/shadow), improved mobile menu panel styling. Same links and labels.
 
-1. **Hero** — Full-height. Eyebrow "ELEVATING POTENTIAL. DELIVERING VALUE." Oversized Cinzel headline "Helping businesses rise to their full financial potential." Supporting line about the firm. Two CTAs: "Start a conversation →" (orange) and "Explore our services" (text link). Marquee/strip of capability words (CORPORATE FINANCE · TREASURY ADVISORY · CAPITAL RAISING · M&A · VALUE CREATION).
-2. **Who We Are** — "Disciplined elevation, not reckless ambition." with the firm narrative, set in a calm two-column layout.
-3. **What We Do** — Three numbered service cards (Corporate Finance / Treasury / Value Creation), each with its descriptor and the bulleted capability list. Clean dividers, hover lift.
-4. **How We Work** — Four principles (Clarity first, Commercially grounded, Disciplined execution, Measurable value) in a 4-up grid with large index numerals.
-5. **Leadership** — "Led by a chartered accountant who thinks like an owner." Dirk Fourie CA(SA) profile block with contact details and a bio placeholder note. Designed as an elegant card.
-6. **Contact** — "Let's discuss your next financial decision." Email/cell/website blocks + enquiry form (Name, Company, Email, How can we help?). Submit builds a mailto link to Dirk@icarusadvisory.co.za and opens the email client; helper text explains this.
-7. **Footer** — Wordmark + tagline, Services list, Contact list.
+**Hero** — keep headline, eyebrow, paragraph, both CTAs and the capability marquee. Strengthen the two-column balance with a refined right-side typographic/credential panel (built only from existing wording such as the tagline and capability words — no new claims). Larger headline scale, ambient brand-gradient glow, staggered load animation, premium primary + secondary buttons.
 
-## Interactions
-- Smooth in-view fade/slide reveals on sections (lightweight, tasteful).
-- Anchor nav scrolls to sections; sticky header condenses on scroll.
-- Hover states on cards and CTAs with restrained motion.
-- Fully responsive (mobile nav collapses to a simple menu).
+**About** — improve two-column rhythm, larger pull-quote treatment for the closing line, more whitespace.
 
-## SEO
-- Title: "Icarus Advisory — Corporate Finance & Treasury" (<60 chars)
-- Meta description from the firm summary (<160 chars)
-- Single H1 (hero), semantic sections, JSON-LD `ProfessionalService`/`Organization` with contact details.
+**Services** — keep the three service blocks and all list items. Upgrade to premium cards (rounded, soft shadow, hover lift, refined number/tag styling, accent dividers) on the dark section, with better internal spacing.
 
-## Technical Notes
-- Edit `src/routes/index.tsx` to build the page; extract sections into `src/components/` (Nav, Hero, About, Services, Approach, Leadership, Contact, Footer) for clarity.
-- Add brand tokens + font families to `src/styles.css` (`@theme`), fonts via `<link>` in `src/routes/__root.tsx`.
-- Mailto form handled client-side (no backend), per your choice.
-- Update root/index `head()` metadata.
+**Approach** — refine the 4-up principles grid into cleaner cards with large index numerals, hover accent, consistent spacing.
 
-No backend or dependencies required.
+**Leadership** — polish the dark profile card (glass/border refinement, better contact rows, hover states). Same content including the bio placeholder line.
+
+**Contact** — keep the mailto form and contact details unchanged in behaviour. Upgrade field styling, labels, the contact-detail rows (icon chips), and the submit button to the premium style; tidy the helper note.
+
+**Footer** — refine spacing, hover states, and divider; keep all links and wording.
+
+## Motion & responsiveness
+
+- Apply consistent `Reveal` reveals with light stagger across all sections.
+- Add hover transitions to buttons, cards, service blocks, contact rows.
+- Audit every section for tablet/mobile: graceful stacking, adjusted padding, fluid type sizes, no overflow (follow grid + `min-w-0` patterns for any mixed text/widget rows).
+
+## Constraints / guarantees
+
+- No content, copy, section, navigation item, image, or branding change.
+- No new dependencies; pure Tailwind v4 + existing tokens + existing `Reveal`.
+- Files touched: `src/styles.css` and the components in `src/components/site/` (`Nav`, `Hero`, `About`, `Services`, `Approach`, `Leadership`, `Contact`, `Footer`). `index.tsx` metadata stays as-is.
+
+## Technical notes
+
+- All new colors/shadows added as semantic tokens in `src/styles.css` (`@theme inline` for color tokens), never hardcoded in components.
+- Web fonts already loaded via `<link>` in `__root.tsx`; unchanged.
+- Verify the build and visually check desktop + mobile via Playwright screenshots after implementation.
