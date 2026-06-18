@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 
 export function About() {
   return (
-    <section id="about" className="bg-paper py-28 lg:py-40">
+    <section id="about" className="bg-paper py-28 lg:py-44">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
           <p className="text-[12px] font-semibold uppercase tracking-[0.4em] text-accent-orange">
@@ -30,7 +30,7 @@ export function About() {
                 higher potential; our approach pairs that ambition with the
                 discipline a board expects.
               </p>
-              <p className="font-medium text-ink">
+              <p className="border-l-2 border-accent-orange pl-6 font-display text-xl font-semibold leading-snug text-ink">
                 The result is advice that is strategic, precise, and built to
                 deliver real commercial value.
               </p>
