@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import logoColor from "@/assets/icarus-logo.png.asset.json";
-import logoLight from "@/assets/icarus-logo-light.png.asset.json";
+import logoColor from "@/assets/icarus-logo.png";
+import logoLight from "@/assets/icarus-logo-light.png";
 
 const links = [
   { label: "Corporate Finance", href: "#services" },
@@ -35,7 +35,7 @@ export function Nav() {
           aria-label="Icarus Advisory home"
         >
           <img
-            src={scrolled ? logoColor.url : logoLight.url}
+            src={scrolled ? logoColor : logoLight}
             alt="Icarus Advisory"
             width={1435}
             height={592}
