@@ -14,7 +14,7 @@ export function Leadership() {
             Leadership
           </p>
         </Reveal>
-        <div className="mt-10 grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
+        <div className="mt-10 max-w-3xl">
           <Reveal delay={120}>
             <h2 className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
               Led by a chartered accountant who thinks like an owner.
@@ -33,39 +33,6 @@ export function Leadership() {
                 Engagements are handled directly and confidentially, with senior
                 attention from first conversation through to execution.
               </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={240}>
-            <div className="rounded-3xl border border-brand-foreground/15 bg-brand-foreground/5 p-8 shadow-elevated backdrop-blur-md transition-transform duration-500 hover:-translate-y-1 lg:p-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-accent-orange">
-                Chief Executive Officer
-              </p>
-              <p className="mt-5 font-display text-3xl font-bold">Dirk Fourie</p>
-              <p className="mt-2 text-sm text-brand-foreground/60">
-                CA(SA) — Corporate Finance & Treasury Advisory
-              </p>
-              <dl className="mt-8 space-y-5 border-t border-brand-foreground/15 pt-8">
-                {[
-                  { k: "Email", v: "Dirk@icarusadvisory.co.za", href: "mailto:Dirk@icarusadvisory.co.za" },
-                  { k: "Cell", v: "083 274 2247", href: "tel:0832742247" },
-                  { k: "Web", v: "icarusadvisory.co.za", href: "https://icarusadvisory.co.za" },
-                ].map((row) => (
-                  <div key={row.k} className="flex items-baseline justify-between gap-4">
-                    <dt className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand-foreground/40">
-                      {row.k}
-                    </dt>
-                    <dd>
-                      <a
-                        href={row.href}
-                        className="text-sm font-medium transition-colors hover:text-accent-orange"
-                      >
-                        {row.v}
-                      </a>
-                    </dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </Reveal>
         </div>
