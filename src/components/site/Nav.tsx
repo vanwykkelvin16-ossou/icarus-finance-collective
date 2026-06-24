@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import logoColor from "@/assets/icarus-logo.png.asset.json";
+import logoLight from "@/assets/icarus-logo-light.png.asset.json";
 
 const links = [
   { label: "Corporate Finance", href: "#services" },
@@ -29,9 +31,16 @@ export function Nav() {
       <nav className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-6 lg:px-10">
         <a
           href="#top"
-          className={`font-display text-xl font-bold tracking-[0.35em] transition-colors ${scrolled ? "text-ink" : "text-paper"}`}
+          className="flex items-center"
+          aria-label="Icarus Advisory home"
         >
-          ICARUS
+          <img
+            src={scrolled ? logoColor.url : logoLight.url}
+            alt="Icarus Advisory"
+            width={1435}
+            height={592}
+            className="h-9 w-auto transition-opacity duration-300 lg:h-10"
+          />
         </a>
 
         <div className="hidden items-center gap-9 md:flex">
