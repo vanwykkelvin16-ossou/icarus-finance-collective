@@ -41,7 +41,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:px-10">
+      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div>
           <Reveal>
             <p className="inline-flex items-center gap-2.5 rounded-full border border-paper/15 bg-paper/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-orange backdrop-blur-sm">
@@ -83,29 +83,6 @@ export function Hero() {
             </div>
           </Reveal>
         </div>
-
-        <Reveal delay={300}>
-          <div className="rounded-3xl border border-paper/15 bg-paper/5 p-8 text-paper shadow-elevated backdrop-blur-md lg:p-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-orange">
-              Areas of focus
-            </p>
-            <ul className="mt-7 divide-y divide-paper/10">
-              {focus.map((item, i) => (
-                <li
-                  key={item}
-                  className="group flex items-center justify-between gap-4 py-4 transition-colors"
-                >
-                  <span className="font-display text-base font-semibold leading-snug transition-colors group-hover:text-accent-orange">
-                    {item}
-                  </span>
-                  <span className="font-display text-xs font-semibold text-paper/40 transition-colors group-hover:text-accent-orange">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
       </div>
 
       <div className="relative mt-20 overflow-hidden border-y border-paper/10 py-5">
