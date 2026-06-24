@@ -29,7 +29,7 @@ export function Nav() {
       <nav className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-6 lg:px-10">
         <a
           href="#top"
-          className="font-display text-xl font-bold tracking-[0.35em] text-ink"
+          className={`font-display text-xl font-bold tracking-[0.35em] transition-colors ${scrolled ? "text-ink" : "text-paper"}`}
         >
           ICARUS
         </a>
@@ -39,7 +39,7 @@ export function Nav() {
             <a
               key={l.label}
               href={l.href}
-              className="relative text-[13px] font-medium tracking-wide text-ink/70 transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-accent-orange after:transition-transform after:duration-300 hover:text-ink hover:after:origin-left hover:after:scale-x-100"
+              className={`relative text-[13px] font-medium tracking-wide transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-accent-orange after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100 ${scrolled ? "text-ink/70 hover:text-ink" : "text-paper/80 hover:text-paper"}`}
             >
               {l.label}
             </a>
@@ -56,17 +56,17 @@ export function Nav() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center text-ink md:hidden"
+          className={`flex h-9 w-9 items-center justify-center md:hidden ${scrolled ? "text-ink" : "text-paper"}`}
         >
           <div className="space-y-[5px]">
             <span
-              className={`block h-[2px] w-5 bg-ink transition-transform ${open ? "translate-y-[7px] rotate-45" : ""}`}
+              className={`block h-[2px] w-5 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "translate-y-[7px] rotate-45" : ""}`}
             />
             <span
-              className={`block h-[2px] w-5 bg-ink transition-opacity ${open ? "opacity-0" : ""}`}
+              className={`block h-[2px] w-5 transition-opacity ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "opacity-0" : ""}`}
             />
             <span
-              className={`block h-[2px] w-5 bg-ink transition-transform ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
+              className={`block h-[2px] w-5 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
             />
           </div>
         </button>
