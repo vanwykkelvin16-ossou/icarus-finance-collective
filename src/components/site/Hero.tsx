@@ -9,14 +9,6 @@ const marquee = [
   "Value Creation",
 ];
 
-const focus = [
-  "Corporate Finance",
-  "Treasury Advisory",
-  "Capital Raising",
-  "Mergers & Acquisitions",
-  "Value Creation",
-];
-
 export function Hero() {
   return (
     <section
