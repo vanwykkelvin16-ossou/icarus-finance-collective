@@ -1,6 +1,15 @@
 import { Reveal } from "./Reveal";
+import heroImage from "@/assets/hero.jpg";
 
 const marquee = [
+  "Corporate Finance",
+  "Treasury Advisory",
+  "Capital Raising",
+  "Mergers & Acquisitions",
+  "Value Creation",
+];
+
+const focus = [
   "Corporate Finance",
   "Treasury Advisory",
   "Capital Raising",
@@ -12,31 +21,50 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-paper pt-24"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-ink pt-24"
     >
+      {/* Cinematic background image */}
+      <img
+        src={heroImage}
+        alt="Abstract ascending financial light curve over glass towers"
+        width={1536}
+        height={1536}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+      />
+      {/* Gradient overlays for legibility */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-[60rem] w-[60rem] -translate-x-1/2 animate-float-slow rounded-full opacity-[0.07]"
+        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle, var(--brand-blue) 0%, transparent 60%)",
+            "linear-gradient(100deg, color-mix(in oklab, var(--brand-blue) 92%, var(--brand-black)) 0%, color-mix(in oklab, var(--brand-blue) 78%, var(--brand-black)) 38%, transparent 78%)",
         }}
       />
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.35fr_1fr] lg:gap-20 lg:px-10">
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-48"
+        style={{
+          background:
+            "linear-gradient(to top, color-mix(in oklab, var(--brand-blue) 90%, var(--brand-black)), transparent)",
+        }}
+      />
+
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:px-10">
         <div>
           <Reveal>
-            <p className="inline-flex items-center gap-2.5 rounded-full border border-ink/10 bg-paper/60 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-orange shadow-soft backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-orange" />
+            <p className="inline-flex items-center gap-2.5 rounded-full border border-paper/15 bg-paper/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-orange backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-orange" />
               Elevating Potential. Delivering Value.
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-8 max-w-5xl font-display text-[2.75rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.5rem]">
-              Helping businesses rise to their full financial potential.
+            <h1 className="mt-8 max-w-4xl font-display text-[2.75rem] font-bold leading-[1.04] tracking-tight text-paper sm:text-6xl lg:text-[4.5rem]">
+              Helping businesses rise to their full{" "}
+              <span className="text-accent-orange">financial potential.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink/60">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
               A corporate finance and treasury advisory firm for business owners,
               executives, investors, and funders who want clearer decisions and
               measurable value.
@@ -55,7 +83,7 @@ export function Hero() {
               </a>
               <a
                 href="#services"
-                className="group inline-flex items-center gap-2 rounded-full border border-ink/15 px-7 py-3.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/30 hover:shadow-soft"
+                className="group inline-flex items-center gap-2 rounded-full border border-paper/25 px-7 py-3.5 text-sm font-semibold text-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-paper/50 hover:bg-paper/5"
               >
                 Explore our services
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -65,17 +93,17 @@ export function Hero() {
         </div>
 
         <Reveal delay={300}>
-          <div className="rounded-3xl border border-ink/10 bg-gradient-brand p-8 text-paper shadow-elevated lg:p-10">
+          <div className="rounded-3xl border border-paper/15 bg-paper/5 p-8 text-paper shadow-elevated backdrop-blur-md lg:p-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-orange">
               Areas of focus
             </p>
             <ul className="mt-7 divide-y divide-paper/10">
-              {marquee.map((item, i) => (
+              {focus.map((item, i) => (
                 <li
                   key={item}
                   className="group flex items-center justify-between gap-4 py-4 transition-colors"
                 >
-                  <span className="font-display text-base font-semibold leading-snug">
+                  <span className="font-display text-base font-semibold leading-snug transition-colors group-hover:text-accent-orange">
                     {item}
                   </span>
                   <span className="font-display text-xs font-semibold text-paper/40 transition-colors group-hover:text-accent-orange">
@@ -88,12 +116,12 @@ export function Hero() {
         </Reveal>
       </div>
 
-      <div className="relative mt-20 overflow-hidden border-y border-ink/10 py-5">
+      <div className="relative mt-20 overflow-hidden border-y border-paper/10 py-5">
         <div className="flex w-max animate-marquee">
           {[...marquee, ...marquee].map((item, i) => (
             <span
               key={i}
-              className="mx-8 font-display text-sm font-semibold uppercase tracking-[0.3em] text-ink/40"
+              className="mx-8 font-display text-sm font-semibold uppercase tracking-[0.3em] text-paper/40"
             >
               {item}
               <span className="ml-16 text-accent-orange">◆</span>
