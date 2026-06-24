@@ -44,13 +44,7 @@ export function Hero() {
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div>
           <Reveal>
-            <p className="inline-flex items-center gap-2.5 rounded-full border border-paper/15 bg-paper/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.32em] text-accent-orange backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-orange" />
-              Elevating Potential. Delivering Value.
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            <h1 className="mt-8 max-w-4xl font-display text-[2.75rem] font-bold leading-[1.04] tracking-tight text-paper sm:text-6xl lg:text-[4.5rem]">
+            <h1 className="max-w-4xl font-display text-[2.75rem] font-bold leading-[1.04] tracking-tight text-paper sm:text-6xl lg:text-[4.5rem]">
               Helping businesses rise to their full{" "}
               <span className="text-accent-orange">financial potential.</span>
             </h1>
